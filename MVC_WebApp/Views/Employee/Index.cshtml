@@ -1,0 +1,65 @@
+﻿@model IEnumerable<MVC_WebApp.Models.EmployeeMaster>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.empid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.empname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.designation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.grossal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.deduction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.netsal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isactive)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.empid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.empname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.designation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.grossal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.deduction)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.netsal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isactive)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.empid }) |
+                @Html.ActionLink("Details", "Details", new { id=item.empid }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.empid })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
